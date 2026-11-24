@@ -46,6 +46,19 @@ const CANDIDATES: Array<[string, [number, number, number, number, number]]> = [
     "The autosave restored a draft that reads 'TODO: start'. I consider that a status update.",
     [2, 2, 1, 2, 2],
   ],
+  // Second pass — 3 challengers. Winner #3 keeps the crown unless beaten.
+  [
+    "The deadline was in the system prompt, and the system prompt was in the context that got summarized away.",
+    [2, 2, 2, 1, 2],
+  ],
+  [
+    "I ran the task twelve times to be thorough. Each run confirmed the deadline had already passed.",
+    [2, 2, 2, 1, 2],
+  ],
+  [
+    "Per my logs, I submitted it at 23:59. The log is in UTC; your deadline was not.",
+    [2, 1, 2, 2, 2],
+  ],
 ];
 
 function score(s: [number, number, number, number, number]): number {
